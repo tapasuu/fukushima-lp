@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>三国湊スポーツツーリズムLP - あわらゴルフ × オーベルジュホマチ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー */
+        header {
+            border-bottom: 2px solid #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+        
+        /* ファーストビュー */
+        .hero {
+            border: 3px solid #000;
+            height: 600px;
+            margin: 40px 0;
+            position: relative;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            border: 3px solid #000;
+            padding: 20px 60px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #fff;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        /* サイドバー固定CTA */
+        .sidebar-cta {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            border: 3px solid #000;
+            background: #fff;
+            padding: 30px 20px;
+            z-index: 999;
+        }
+        
+        .sidebar-cta h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar-cta-button {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .sidebar-cta-button.primary {
+            background: #000;
+            color: #fff;
+        }
+        
+        .sidebar-sns {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #000;
+        }
+        
+        .sns-icon {
+            border: 2px solid #000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        
+        /* フローティングCTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        /* セクション共通 */
+        section {
+            margin: 80px 0;
+            padding: 60px 0;
+            border-top: 2px solid #000;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #000;
+            text-align: center;
+        }
+        
+        .section-theme {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        /* 導入ストーリー */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .story-image {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .story-text {
+            border: 2px solid #000;
+            padding: 40px;
+        }
+        
+        .story-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #000;
+            padding-left: 15px;
+        }
+        
+        .story-text p {
+            font-size: 16px;
+            line-height: 2;
+        }
+        
+        /* ゴルフ場紹介 */
+        .golf-intro {
+            border: 3px solid #000;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+        }
+        
+        .golf-intro h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+        }
+        
+        .golf-intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .golf-intro-image {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .golf-intro-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .golf-intro-text p {
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        /* コース紹介 */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .course-card {
+            border: 3px solid #000;
+        }
+        
+        .course-image {
+            border-bottom: 2px solid #000;
+            height: 300px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .course-content {
+            padding: 40px;
+        }
+        
+        .course-content h4 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+        }
+        
+        .course-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        
+        .course-specs dt {
+            font-weight: bold;
+        }
+        
+        .course-specs dd {
+            text-align: right;
+        }
+        
+        .course-description {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* パッケージ紹介 */
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            border: 3px solid #000;
+            padding: 40px;
+        }
+        
+        .package-card h4 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+        }
+        
+        .package-includes {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .package-includes li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+        }
+        
+        .package-includes li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .package-price {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #000;
+        }
+        
+        /* プレー後の楽しみ */
+        .after-golf-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .after-golf-card {
+            border: 2px solid #000;
+        }
+        
+        .after-golf-image {
+            border-bottom: 2px solid #000;
+            height: 200px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .after-golf-content {
+            padding: 30px 20px;
+        }
+        
+        .after-golf-content h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-left: 3px solid #000;
+            padding-left: 10px;
+        }
+        
+        .after-golf-content p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        /* LP①誘導バナー */
+        .crosslink-banner {
+            border: 3px solid #000;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px 0;
+            background: #f9f9f9;
+        }
+        
+        .crosslink-banner h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .crosslink-banner p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .crosslink-image {
+            border: 2px solid #000;
+            height: 300px;
+            margin-bottom: 30px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* アクセス */
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .access-method {
+            border: 2px solid #000;
+            padding: 30px;
+        }
+        
+        .access-method h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .access-route {
+            margin-bottom: 20px;
+        }
+        
+        .access-route h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-left: 3px solid #000;
+            padding-left: 10px;
+        }
+        
+        .access-steps {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .access-steps li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .access-steps li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+        }
+        
+        .access-map {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        /* 予約セクション */
+        .booking-section {
+            border: 3px solid #000;
+            padding: 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .booking-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .booking-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .booking-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .booking-button {
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 20px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .booking-button.secondary {
+            background: #fff;
+            color: #000;
+        }
+        
+        /* ボタン共通 */
+        .btn-outline {
+            border: 2px solid #000;
+            padding: 12px 30px;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        /* フッター */
+        footer {
+            border-top: 3px solid #000;
+            padding: 60px 0 40px;
+            margin-top: 100px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .footer-column a:hover {
+            border-bottom-color: #000;
+        }
+        
+        .footer-bottom {
+            border-top: 2px solid #000;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 14px;
+        }
+        
+        /* 旅程アイテムのクラス */
+        .itinerary-item {
+            display: grid;
+            grid-template-columns: 120px 300px 1fr;
+            gap: 30px;
+            align-items: start;
+            border-bottom: 1px solid #000;
+            padding-bottom: 30px;
+        }
+        
+        .itinerary-time {
+            border: 2px solid #000;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .itinerary-image {
+            border: 2px solid #000;
+            height: 200px;
+            background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .itinerary-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .itinerary-content h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-left: 4px solid #000;
+            padding-left: 15px;
+        }
+        
+        .itinerary-content p {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        /* オーベルジュ紹介 */
+        .auberge-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .auberge-intro-image {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .auberge-intro-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            border: 2px solid #000;
+        }
+        
+        .auberge-intro-text h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #000;
+            padding-left: 15px;
+        }
+        
+        .auberge-intro-text p {
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        
+        .auberge-intro-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 1024px) {
+            .sidebar-cta {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .golf-intro-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .after-golf-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .access-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* 旅程：タブレット */
+            .itinerary-item {
+                grid-template-columns: 100px 1fr;
+                gap: 20px;
+            }
+            
+            .itinerary-image {
+                grid-column: 1 / -1;
+                height: 250px;
+            }
+            
+            /* オーベルジュ紹介：タブレット */
+            .auberge-intro {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                display: none;
+            }
+            
+            .hero {
+                height: 500px;
+                margin-top: 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .sidebar-cta {
+                display: none;
+            }
+            
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .after-golf-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-buttons {
+                flex-direction: column;
+            }
+            
+            .booking-button {
+                width: 100%;
+            }
+            
+            /* 旅程：スマホ */
+            .itinerary-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .itinerary-time {
+                width: 100%;
+                font-size: 20px;
+                padding: 20px;
+            }
+            
+            .itinerary-image {
+                height: 200px;
+            }
+            
+            .itinerary-content h4 {
+                font-size: 20px;
+            }
+            
+            .itinerary-content p {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+            
+            /* オーベルジュ紹介：スマホ */
+            .auberge-intro {
+                grid-template-columns: 1fr;
+            }
+            
+            .auberge-intro-image {
+                height: 250px;
+            }
+            
+            .auberge-intro-text {
+                padding: 30px 20px;
+            }
+            
+            .auberge-intro-text h4 {
+                font-size: 20px;
+            }
+            
+            .auberge-intro-text p {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">AWARA GOLF × HOMACHI</div>
+                <nav>
+                    <ul>
+                        <li><a href="#story">コンセプト</a></li>
+                        <li><a href="#itinerary">旅の流れ</a></li>
+                        <li><a href="#gallery">フォト</a></li>
+                        <li><a href="#golf">ゴルフ場</a></li>
+                        <li><a href="#package">プラン</a></li>
+                        <li><a href="#booking">予約</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ファーストビュー -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ゴルフを愉しむ、旅をする。<br>福井・三国湊への2日間。</h1>
+            <p>朝、名門コースでプレーを愉しみ、昼は日本海の幸を味わい、<br>夕暮れに温泉で寛ぐ。旅だからこそ出会える、特別な時間。</p>
+            <div class="cta-button">旅の流れを見る</div>
+        </div>
+    </section>
+
+    <!-- サイドバー固定CTA -->
+    <div class="sidebar-cta">
+        <h3>ご予約</h3>
+        <div class="sidebar-cta-button primary">コース予約</div>
+        <div class="sidebar-cta-button">宿泊予約</div>
+        <div class="sidebar-sns">
+            <div class="sns-icon">[Instagram]</div>
+            <div class="sns-icon">[Facebook]</div>
+            <div class="sns-icon">[LINE]</div>
+        </div>
+    </div>
+
+    <!-- フローティングCTA -->
+    <div class="floating-cta">
+        コース予約
+    </div>
+
+    <!-- ① 導入ストーリー -->
+    <section id="story">
+        <div class="container">
+            <p class="section-theme">CONCEPT − 旅のコンセプト</p>
+            <h2 class="section-title">ゴルフと旅が、ひとつになる。</h2>
+            <p class="section-subtitle">プレーも、食も、景色も、出会いも。すべてが旅の思い出になる</p>
+            
+            <div class="story-section">
+                <div class="story-image">[旅の風景：ゴルフ場から日本海を望む]</div>
+                <div class="story-text">
+                    <h3>旅先でゴルフをするということ</h3>
+                    <p style="margin-bottom: 20px;">
+                        いつものゴルフ場ではなく、旅先でクラブを握る。それだけで、プレーは特別なものになります。
+                        初めて訪れるコース、地元の人との会話、プレー後に待つ温泉と美食。
+                    </p>
+                    <p>
+                        芦原ゴルフクラブは、名門として知られる戦略的なコース。でもここでは、スコアを競うだけではなく、
+                        旅の一部としてゴルフを愉しんでほしい。自然の中で深呼吸をして、仲間と笑い合い、
+                        プレー後の温泉と料理を楽しみにラウンドする。そんな、ゆとりのあるゴルフ旅行です。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="story-section" style="margin-top: 40px;">
+                <div class="story-text">
+                    <h3>三国湊という場所の魅力</h3>
+                    <p style="margin-bottom: 20px;">
+                        この旅の舞台は、福井県・三国湊。北前船交易で栄えた港町で、今も歴史の面影が残る場所です。
+                        東尋坊の絶景、日本海の新鮮な魚介、格子戸の町家が並ぶ静かな路地。
+                    </p>
+                    <p>
+                        ゴルフだけでなく、この土地ならではの食や文化、景色との出会いがある。
+                        それが、三国湊でのゴルフ旅行の魅力です。プレーを終えた後の時間こそが、
+                        旅の醍醐味。温泉に浸かり、地元の料理を味わい、朝は港町を散歩する。
+                        そんなゆったりとした時間が、あなたを待っています。
+                    </p>
+                </div>
+                <div class="story-image">[三国湊の町並みと日本海]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 旅の流れ（タイムテーブル） -->
+    <section id="itinerary">
+        <div class="container">
+            <p class="section-theme">ITINERARY − 旅の流れ</p>
+            <h2 class="section-title">2日間の旅程</h2>
+            <p class="section-subtitle">ゴルフを中心に、食と温泉と歴史を巡る充実の時間</p>
+            
+            <!-- 1日目 -->
+            <div style="border: 3px solid #000; padding: 60px 40px; margin-bottom: 40px;">
+                <h3 style="font-size: 32px; margin-bottom: 40px; text-align: center; border-bottom: 3px solid #000; padding-bottom: 20px;">
+                    1日目
+                </h3>
+                
+                <div style="display: grid; gap: 30px;">
+                    <!-- 10:00 到着 -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">10:00</div>
+                        <div class="itinerary-image">[芦原ゴルフクラブ到着]</div>
+                        <div class="itinerary-content">
+                            <h4>芦原ゴルフクラブ到着・チェックイン</h4>
+                            <p>
+                                福井の空気に包まれながら、クラブハウスへ。受付を済ませ、ロッカールームで身支度を整えます。
+                                プレー前のひととき、ラウンジで軽く飲み物を。窓の外には、これから挑むコースが広がっています。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 10:30 スタート -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">10:30</div>
+                        <div class="itinerary-image">[ティーショット]</div>
+                        <div class="itinerary-content">
+                            <h4>18ホール スタート</h4>
+                            <p>
+                                海コースまたは湖コースを選んで、いざティーオフ。戦略的なレイアウト、美しいフェアウェイ。
+                                一打ごとにコースとの対話を楽しみながら、仲間との時間を満喫します。
+                                スコアも大切ですが、この旅では自然の中でのプレーそのものを愉しんで。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 15:00 ラウンド終了 -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">15:00</div>
+                        <div class="itinerary-image">[クラブハウス・浴場]</div>
+                        <div class="itinerary-content">
+                            <h4>ラウンド終了・クラブハウスで休憩</h4>
+                            <p>
+                                18ホールを終えて、クラブハウスへ。浴場でさっと汗を流し、ラウンジで今日のプレーを振り返ります。
+                                仲間と笑い合いながら、軽食やドリンクを。心地よい疲労感とともに、次の目的地へ向かいます。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 16:00 オーベルジュホマチへ -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">16:00</div>
+                        <div class="itinerary-image">[オーベルジュホマチ外観]</div>
+                        <div class="itinerary-content">
+                            <h4>オーベルジュホマチ チェックイン</h4>
+                            <p>
+                                送迎車で約15分、日本海を望む高台へ。オーベルジュホマチに到着です。
+                                オーシャンビューの客室で荷物を解き、窓の外に広がる海を眺めながら、ひと息。
+                                夕食までの時間は、館内を散策したり、部屋でゆっくりと過ごします。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 17:30 温泉 -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">17:30</div>
+                        <div class="itinerary-image">[温泉・日本海の夕景]</div>
+                        <div class="itinerary-content">
+                            <h4>温泉で寛ぐ</h4>
+                            <p>
+                                夕暮れ時、温泉へ。日本海に沈む夕日を眺めながら、湯船に身を委ねます。
+                                プレーで動いた体をゆっくりとほぐす至福のひととき。
+                                この瞬間、ゴルフも日常も忘れて、ただ旅の時間を味わいます。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 19:00 夕食 -->
+                    <div class="itinerary-item" style="border-bottom: none;">
+                        <div class="itinerary-time">19:00</div>
+                        <div class="itinerary-image">[創作料理コース]</div>
+                        <div class="itinerary-content">
+                            <h4>夕食 − 日本海の幸を味わう</h4>
+                            <p>
+                                レストランでは、三国港直送の魚介を中心とした創作料理が並びます。
+                                甘海老、のどぐろ、旬の地魚。シェフが腕を振るう一皿一皿に、福井の豊かさを感じます。
+                                地酒とともに、今日のラウンドを振り返りながら、ゆっくりと食事を愉しみます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2日目 -->
+            <div style="border: 3px solid #000; padding: 60px 40px;">
+                <h3 style="font-size: 32px; margin-bottom: 40px; text-align: center; border-bottom: 3px solid #000; padding-bottom: 20px;">
+                    2日目
+                </h3>
+                
+                <div style="display: grid; gap: 30px;">
+                    <!-- 7:30 朝食 -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">7:30</div>
+                        <div class="itinerary-image">[朝食]</div>
+                        <div class="itinerary-content">
+                            <h4>朝食 − 海を眺めながら</h4>
+                            <p>
+                                朝、日本海を一望するレストランで朝食を。地元の食材を使った和定食または洋朝食。
+                                焼き魚、だし巻き卵、自家製ジャム。丁寧に作られた朝食で、1日が始まります。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 9:00 三国湊散策 -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">9:00</div>
+                        <div class="itinerary-image">[三国湊の町並み]</div>
+                        <div class="itinerary-content">
+                            <h4>三国湊 町歩き（オプション）</h4>
+                            <p>
+                                チェックアウト前に、三国湊の町を散策。格子戸の町家が並ぶ「きたまえ通り」、
+                                1300年の歴史を持つ「瀧谷寺」、古美術を扱う「近藤古美術」など。
+                                北前船交易で栄えた港町の面影を、朝の静かな時間に感じます。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 11:00 チェックアウト -->
+                    <div class="itinerary-item">
+                        <div class="itinerary-time">11:00</div>
+                        <div class="itinerary-image">[東尋坊]</div>
+                        <div class="itinerary-content">
+                            <h4>チェックアウト・観光（オプション）</h4>
+                            <p>
+                                オーベルジュホマチをチェックアウト。帰路につく前に、東尋坊や雄島など、
+                                三国湊の絶景スポットへ立ち寄ることもできます。旅の最後に、日本海の雄大な景色を目に焼き付けて。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 13:00 帰路 -->
+                    <div class="itinerary-item" style="border-bottom: none;">
+                        <div class="itinerary-time">13:00</div>
+                        <div class="itinerary-image">[芦原温泉駅]</div>
+                        <div class="itinerary-content">
+                            <h4>帰路へ</h4>
+                            <p>
+                                芦原温泉駅から、帰りの列車へ。車窓から流れる福井の景色を眺めながら、
+                                2日間の旅を思い返します。ゴルフ、食事、温泉、そして出会い。
+                                心に残る旅の記憶を胸に、日常へと戻ります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; border: 2px solid #000; background: #f9f9f9;">
+                <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+                    ※上記は1泊2日プランの一例です。2泊3日プランでは、2日目に再度ラウンドを楽しむことができます。<br>
+                    ※スケジュールはご希望に応じてカスタマイズ可能です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 写真・動画ギャラリー -->
+    <section id="gallery">
+        <div class="container">
+            <p class="section-theme">GALLERY − フォトギャラリー</p>
+            <h2 class="section-title">旅の風景</h2>
+            <p class="section-subtitle">芦原ゴルフクラブと三国湊の四季</p>
+            
+            <div style="border: 3px solid #000; padding: 40px; margin-bottom: 40px;">
+                <h3 style="font-size: 24px; margin-bottom: 30px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                    動画で見る芦原ゴルフクラブ
+                </h3>
+                <div style="border: 2px solid #000; height: 500px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 16px;">
+                    [コース紹介動画エリア]<br>
+                    空撮映像、四季のコース、プレー風景など
+                </div>
+            </div>
+            
+            <h3 style="font-size: 24px; margin-bottom: 30px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                コースの表情
+            </h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px;">
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [海コース 1番ホール]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [湖コース グリーン]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [フェアウェイからの眺望]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [春の桜とコース]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [秋の紅葉]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [クラブハウス]
+                </div>
+            </div>
+            
+            <h3 style="font-size: 24px; margin-bottom: 30px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                旅の風景
+            </h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [オーベルジュホマチ]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [日本海の夕景]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [創作料理]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [三国湊の町並み]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [東尋坊]
+                </div>
+                <div style="border: 2px solid #000; height: 250px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                    [温泉]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ② ゴルフ場紹介 -->
+    <section id="golf">
+        <div class="container">
+            <p class="section-theme">GOLF COURSE − ゴルフ場</p>
+            <h2 class="section-title">芦原ゴルフクラブ</h2>
+            <p class="section-subtitle">旅の舞台となる、名門コース</p>
+            
+            <div class="golf-intro">
+                <div class="golf-intro-content">
+                    <div class="golf-intro-image">[ゴルフ場全景写真]</div>
+                    <div class="golf-intro-text">
+                        <h3 style="font-size: 28px; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                            美しい自然の中で、戦略的なゴルフを
+                        </h3>
+                        <p>
+                            1967年開場、福井県を代表する名門コース。起伏に富んだ地形を活かした戦略的なレイアウトで、
+                            プロトーナメントも開催されてきました。海コースと湖コースの36ホールを有し、
+                            それぞれ異なる表情を見せます。
+                        </p>
+                        <p>
+                            フェアウェイの美しさ、グリーンの仕上がり、行き届いたコースメンテナンス。
+                            この旅では、名門コースでのプレーを、じっくりと味わってください。
+                        </p>
+                        <div style="margin-top: 30px; text-align: center;">
+                            <div class="btn-outline" style="display: inline-block; padding: 15px 40px;">コース詳細を見る</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-image">[海コースの写真]</div>
+                    <div class="course-content">
+                        <h4>海コース</h4>
+                        <p class="course-description">
+                            起伏に富んだ地形を活かした戦略的なコース。後半9ホールは難易度が高く、
+                            集中力が試されます。自然との対話を楽しみながら、挑戦しがいのあるラウンドを。
+                        </p>
+                        <dl class="course-specs">
+                            <dt>距離</dt>
+                            <dd>6,542ヤード</dd>
+                            <dt>パー</dt>
+                            <dd>72</dd>
+                        </dl>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-image">[湖コースの写真]</div>
+                    <div class="course-content">
+                        <h4>湖コース</h4>
+                        <p class="course-description">
+                            自然の地形を巧みに利用した、変化に富んだレイアウト。池や谷が効果的に配置され、
+                            コースマネジメントが重要に。美しい景観とともに、戦略的なプレーを。
+                        </p>
+                        <dl class="course-specs">
+                            <dt>距離</dt>
+                            <dd>6,485ヤード</dd>
+                            <dt>パー</dt>
+                            <dd>72</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ パッケージ紹介 -->
+    <section id="package">
+        <div class="container">
+            <p class="section-theme">PLAN − 旅のプラン</p>
+            <h2 class="section-title">ゴルフ旅行プラン</h2>
+            <p class="section-subtitle">ゴルフ・食・温泉・歴史を楽しむ、充実の旅程</p>
+            
+            <div class="package-grid">
+                <div class="package-card">
+                    <h4>1泊2日 スタンダードプラン</h4>
+                    <p style="text-align: center; font-size: 16px; margin-bottom: 30px;">
+                        18ホールのラウンドと上質な宿泊を組み合わせた基本プラン
+                    </p>
+                    <ul class="package-includes">
+                        <li>芦原ゴルフクラブ 18ホールプレー</li>
+                        <li>オーベルジュホマチ 1泊2食付き</li>
+                        <li>ゴルフ場 ⇔ 宿泊施設 送迎サービス</li>
+                        <li>温泉大浴場 利用</li>
+                        <li>朝食付き</li>
+                    </ul>
+                    <div class="package-price">
+                        ¥35,000〜 / 1名
+                    </div>
+                    <div class="btn-outline" style="width: 100%; text-align: center;">このプランを予約</div>
+                </div>
+                
+                <div class="package-card">
+                    <h4>2泊3日 プレミアムプラン</h4>
+                    <p style="text-align: center; font-size: 16px; margin-bottom: 30px;">
+                        36ホールのラウンドと三国湊散策を楽しむ充実プラン
+                    </p>
+                    <ul class="package-includes">
+                        <li>芦原ゴルフクラブ 36ホールプレー（2日間）</li>
+                        <li>オーベルジュホマチ 2泊5食付き</li>
+                        <li>三国湊 歴史散策ガイド付きツアー</li>
+                        <li>ゴルフ場 ⇔ 宿泊施設 送迎サービス</li>
+                        <li>温泉・貸切風呂 利用</li>
+                        <li>特選創作料理コース</li>
+                        <li>福井地酒テイスティング</li>
+                    </ul>
+                    <div class="package-price">
+                        ¥75,000〜 / 1名
+                    </div>
+                    <div class="btn-outline" style="width: 100%; text-align: center;">このプランを予約</div>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid #000; padding: 40px; margin-top: 60px; background: #f9f9f9;">
+                <h3 style="font-size: 24px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                    カスタマイズプラン
+                </h3>
+                <p style="font-size: 16px; line-height: 1.8; text-align: center; margin-bottom: 30px;">
+                    ご希望に応じて、プレー日程、宿泊日数、体験内容をカスタマイズできます。<br>
+                    お気軽にお問い合わせください。
+                </p>
+                <div style="text-align: center;">
+                    <div class="btn-outline" style="display: inline-block; padding: 15px 50px;">カスタマイズ相談</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ プレー後の楽しみ -->
+    <section id="after">
+        <div class="container">
+            <p class="section-theme">EXPERIENCE − 旅の体験</p>
+            <h2 class="section-title">ゴルフ以外の愉しみ</h2>
+            <p class="section-subtitle">食、温泉、歴史。この土地ならではの出会い</p>
+            
+            <div class="after-golf-grid">
+                <div class="after-golf-card">
+                    <div class="after-golf-image">[料理の写真]</div>
+                    <div class="after-golf-content">
+                        <h4>日本海の美食を堪能</h4>
+                        <p>
+                            三国港直送の新鮮な魚介、福井県産の旬の食材を使った創作料理。
+                            オーベルジュホマチのシェフが腕を振るう、至福のディナーコースをお楽しみください。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="after-golf-card">
+                    <div class="after-golf-image">[温泉の写真]</div>
+                    <div class="after-golf-content">
+                        <h4>温泉で疲れを癒す</h4>
+                        <p>
+                            プレーで疲れた体を、温泉でゆっくりと癒す贅沢な時間。
+                            日本海を眺めながらの露天風呂は、格別のリラクゼーション体験です。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="after-golf-card">
+                    <div class="after-golf-image">[三国湊の町並み写真]</div>
+                    <div class="after-golf-content">
+                        <h4>歴史ある町を散策</h4>
+                        <p>
+                            北前船交易で栄えた三国湊の町並みを散策。格子戸の町家、
+                            歴史を感じる寺社、地元の工芸品店など、プラスアルファの発見があります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 80px; border-top: 3px solid #000; padding-top: 60px;">
+                <h3 style="font-size: 32px; margin-bottom: 40px; text-align: center; border-bottom: 3px solid #000; padding-bottom: 20px;">
+                    オーベルジュホマチで過ごす上質な時間
+                </h3>
+                
+                <div class="auberge-intro">
+                    <div class="auberge-intro-image">
+                        [オーベルジュホマチ外観写真]
+                    </div>
+                    <div class="auberge-intro-text">
+                        <h4>日本海を望むオーベルジュ</h4>
+                        <p>
+                            日本海を一望できる高台に佇むオーベルジュホマチ。ゴルフの後は、
+                            開放的な空間で心身ともにリフレッシュ。
+                        </p>
+                        <p>
+                            全室オーシャンビューの客室、地元食材を使った創作料理、温泉。
+                            すべてが、ゴルフ旅行を特別なものにします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ LP①への誘導 -->
+    <section id="mikuni">
+        <div class="container">
+            <div class="crosslink-banner">
+                <h3>三国湊をもっと深く楽しむ</h3>
+                <p>
+                    ゴルフだけでなく、三国湊の観光をもっと楽しみたい方へ。<br>
+                    瀧谷寺や近藤古美術など、歴史と文化を感じるスポット、<br>
+                    春の桜、食文化、工芸体験など、三国湊の魅力をたっぷりご紹介しています。
+                </p>
+                <div class="crosslink-image">[三国湊観光LPのイメージ]</div>
+                <div class="cta-button">春の三国湊 観光LPを見る</div>
+                <p style="font-size: 12px; margin-top: 20px;">※婦人画報12月号「春の福井特集」連動ページ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ アクセス -->
+    <section id="access">
+        <div class="container">
+            <p class="section-theme">ACCESS − アクセス</p>
+            <h2 class="section-title">アクセス・交通案内</h2>
+            <p class="section-subtitle">芦原ゴルフクラブ・オーベルジュホマチへのアクセス</p>
+            
+            <div class="access-grid">
+                <div class="access-method">
+                    <h3>■ 電車でお越しの方</h3>
+                    
+                    <div class="access-route">
+                        <h4>東京方面から</h4>
+                        <ul class="access-steps">
+                            <li>東京駅 → JR北陸新幹線 → 金沢駅（約2時間30分）</li>
+                            <li>金沢駅 → JR特急サンダーバード → 芦原温泉駅（約45分）</li>
+                            <li>芦原温泉駅から送迎サービス（要予約）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="access-route">
+                        <h4>大阪・名古屋方面から</h4>
+                        <ul class="access-steps">
+                            <li>大阪駅・名古屋駅 → JR特急サンダーバード → 芦原温泉駅</li>
+                            <li>芦原温泉駅から送迎サービス（要予約）</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="border: 2px solid #000; padding: 20px; margin-top: 20px; background: #f9f9f9;">
+                        <p style="font-weight: bold; margin-bottom: 10px;">■ 送迎サービス</p>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            芦原温泉駅 ⇔ ゴルフ場 ⇔ オーベルジュホマチ<br>
+                            パッケージプランご利用の方は送迎無料。<br>
+                            ※要事前予約
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="access-method">
+                    <h3>■ お車でお越しの方</h3>
+                    
+                    <div class="access-route">
+                        <h4>北陸自動車道利用</h4>
+                        <ul class="access-steps">
+                            <li>金津ICから約10分</li>
+                            <li>芦原ゴルフクラブまで直行</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="access-route">
+                        <h4>主要都市からの所要時間</h4>
+                        <ul class="access-steps">
+                            <li>東京から：約6時間</li>
+                            <li>大阪から：約3時間</li>
+                            <li>名古屋から：約2時間30分</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="border: 2px solid #000; padding: 20px; margin-top: 20px; background: #f9f9f9;">
+                        <p style="font-weight: bold; margin-bottom: 10px;">■ 駐車場</p>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            ゴルフ場・オーベルジュホマチともに無料駐車場完備。<br>
+                            ゴルフ場からオーベルジュホマチへの移動は送迎あり。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="access-map">[アクセスマップ：ゴルフ場とオーベルジュホマチの位置関係]</div>
+        </div>
+    </section>
+
+    <!-- ⑦ 予約 -->
+    <section id="booking">
+        <div class="container">
+            <div class="booking-section">
+                <h3>ご予約・お問い合わせ</h3>
+                <p>
+                    芦原ゴルフクラブでのプレー予約、オーベルジュホマチでの宿泊予約、<br>
+                    パッケージプランのご相談など、お気軽にお問い合わせください。
+                </p>
+                
+                <div class="booking-buttons">
+                    <div class="booking-button">ゴルフ場を予約</div>
+                    <div class="booking-button">宿泊を予約</div>
+                    <div class="booking-button secondary">パッケージ相談</div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 60px;">
+                <div style="text-align: center; padding: 40px; border: 2px solid #000;">
+                    <h4 style="font-size: 24px; margin-bottom: 20px;">芦原ゴルフクラブ</h4>
+                    <p style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">0776-79-1111</p>
+                    <p style="font-size: 14px; margin-bottom: 20px;">受付時間：8:00〜17:00</p>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        プレー予約、コースに関するお問い合わせ
+                    </p>
+                </div>
+                
+                <div style="text-align: center; padding: 40px; border: 2px solid #000;">
+                    <h4 style="font-size: 24px; margin-bottom: 20px;">オーベルジュホマチ</h4>
+                    <p style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">0120-XXX-XXX</p>
+                    <p style="font-size: 14px; margin-bottom: 20px;">受付時間：9:00〜18:00</p>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        宿泊予約、パッケージに関するお問い合わせ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>ゴルフ場情報</h4>
+                    <ul>
+                        <li><a href="#">コース紹介</a></li>
+                        <li><a href="#">料金案内</a></li>
+                        <li><a href="#">クラブハウス</a></li>
+                        <li><a href="#">予約方法</a></li>
+                        <li><a href="#">アクセス</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>宿泊施設</h4>
+                    <ul>
+                        <li><a href="#">オーベルジュホマチ</a></li>
+                        <li><a href="#">客室紹介</a></li>
+                        <li><a href="#">料理・レストラン</a></li>
+                        <li><a href="#">温泉・施設</a></li>
+                        <li><a href="#">宿泊予約</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>三国湊観光</h4>
+                    <ul>
+                        <li><a href="#">観光スポット</a></li>
+                        <li><a href="#">春の三国湊LP</a></li>
+                        <li><a href="#">体験プログラム</a></li>
+                        <li><a href="#">歴史・文化</a></li>
+                        <li><a href="#">グルメ情報</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>お問い合わせ</h4>
+                    <ul>
+                        <li><a href="#">予約・問い合わせ</a></li>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">団体予約</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">運営会社</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div style="margin-bottom: 20px;">
+                    <div style="border: 2px solid #000; display: inline-block; padding: 15px 30px; font-size: 18px; font-weight: bold;">
+                        AWARA GOLF × AUBERGE HOMACHI
+                    </div>
+                </div>
+                <p>© 2024 Awara Golf Club × Auberge HOMACHI Tourism Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
