@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三国湊 春の福井観光LP ワイヤーフレーム</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー */
+        header {
+            border-bottom: 2px solid #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            border: 2px solid #000;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+        
+        /* ファーストビュー */
+        .hero {
+            border: 3px solid #000;
+            height: 600px;
+            margin: 40px 0;
+            position: relative;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            border: 3px solid #000;
+            padding: 20px 60px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #fff;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        /* 固定サイドバーCTA */
+        .sidebar-cta {
+            position: fixed;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            border: 3px solid #000;
+            background: #fff;
+            padding: 30px 20px;
+            z-index: 999;
+        }
+        
+        .sidebar-cta h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar-cta-button {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .sidebar-cta-button.primary {
+            background: #000;
+            color: #fff;
+        }
+        
+        .sidebar-sns {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #000;
+        }
+        
+        .sns-icon {
+            border: 2px solid #000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        
+        /* フローティングCTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        /* セクション共通 */
+        section {
+            margin: 80px 0;
+            padding: 60px 0;
+            border-top: 2px solid #000;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #000;
+            text-align: center;
+        }
+        
+        .section-theme {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        /* 導入ストーリー */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .story-image {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .story-text {
+            border: 2px solid #000;
+            padding: 40px;
+        }
+        
+        .story-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #000;
+            padding-left: 15px;
+        }
+        
+        .story-text p {
+            font-size: 16px;
+            line-height: 2;
+        }
+        
+        /* 観光モデルコース */
+        .course-tabs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        
+        .course-tab {
+            border: 2px solid #000;
+            padding: 15px 40px;
+            font-size: 18px;
+            background: #fff;
+            cursor: pointer;
+        }
+        
+        .course-tab.active {
+            background: #000;
+            color: #fff;
+        }
+        
+        .course-content {
+            border: 2px solid #000;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .course-map {
+            border: 2px solid #000;
+            height: 400px;
+            margin-bottom: 40px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .course-timeline {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 300px 1fr;
+            gap: 30px;
+            align-items: start;
+            border-bottom: 1px solid #000;
+            padding-bottom: 30px;
+        }
+        
+        .timeline-time {
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .timeline-image {
+            border: 2px solid #000;
+            height: 200px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .timeline-text h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            border-left: 3px solid #000;
+            padding-left: 10px;
+        }
+        
+        .timeline-text p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        /* 宿泊施設紹介 → プラン紹介 */
+        .accommodation-intro {
+            border: 2px solid #000;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .accommodation-intro h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+        }
+        
+        .accommodation-intro p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .plan-card {
+            border: 2px solid #000;
+        }
+        
+        .plan-image {
+            border-bottom: 2px solid #000;
+            height: 250px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .plan-content {
+            padding: 30px;
+        }
+        
+        .plan-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .plan-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            border: 1px solid #000;
+            padding: 5px 15px;
+            font-size: 12px;
+        }
+        
+        .plan-description {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .plan-features {
+            border-top: 1px solid #000;
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .plan-features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .plan-features li:before {
+            content: "□ ";
+            font-weight: bold;
+        }
+        
+        .plan-cta {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-outline {
+            border: 2px solid #000;
+            padding: 12px 30px;
+            text-align: center;
+            flex: 1;
+            cursor: pointer;
+        }
+        
+        /* 周辺体験・観光紹介 */
+        .experience-categories {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .experience-category {
+            border: 2px solid #000;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .experience-card {
+            border: 2px solid #000;
+        }
+        
+        .experience-image {
+            border-bottom: 2px solid #000;
+            height: 200px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .experience-content {
+            padding: 20px;
+        }
+        
+        .experience-content h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-left: 3px solid #000;
+            padding-left: 10px;
+        }
+        
+        .experience-content p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* 季節特集（春） */
+        .season-hero {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .season-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .season-card {
+            border: 2px solid #000;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .season-icon {
+            border: 2px solid #000;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .season-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .season-card p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        /* アクセス案内 */
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .access-method {
+            border: 2px solid #000;
+            padding: 30px;
+        }
+        
+        .access-method h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .access-route {
+            margin-bottom: 20px;
+        }
+        
+        .access-route h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-left: 3px solid #000;
+            padding-left: 10px;
+        }
+        
+        .access-steps {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .access-steps li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .access-steps li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+        }
+        
+        .access-map {
+            border: 2px solid #000;
+            height: 400px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        /* お客様の声 */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .review-card {
+            border: 2px solid #000;
+            padding: 30px;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #000;
+        }
+        
+        .review-avatar {
+            border: 2px solid #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+        
+        .review-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .review-info p {
+            font-size: 12px;
+        }
+        
+        .review-rating {
+            margin-bottom: 15px;
+        }
+        
+        .review-text {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .media-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #000;
+        }
+        
+        .media-logo {
+            border: 2px solid #000;
+            width: 150px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        /* 料金・予約 */
+        .special-plan-section {
+            border: 3px solid #000;
+            padding: 60px 40px;
+            margin-top: 40px;
+            background: #f9f9f9;
+        }
+        
+        .special-plan-section h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+        }
+        
+        .special-plans {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .special-plan-card {
+            border: 3px solid #000;
+            padding: 40px;
+            background: #fff;
+        }
+        
+        .special-plan-card h4 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+        }
+        
+        .special-plan-content {
+            margin-bottom: 30px;
+        }
+        
+        .special-plan-price {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #000;
+        }
+        
+        .special-plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .special-plan-features li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .special-plan-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .booking-button-section {
+            border: 3px solid #000;
+            padding: 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .booking-button-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .booking-button-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .booking-button-large {
+            border: 3px solid #000;
+            background: #000;
+            color: #fff;
+            padding: 25px 80px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        /* 婦人画報掲載バナー */
+        .media-banner {
+            border: 2px solid #000;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .media-banner-image {
+            border: 2px solid #000;
+            height: 120px;
+            max-width: 400px;
+            margin: 0 auto;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .media-banner p {
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        /* フッター */
+        footer {
+            border-top: 3px solid #000;
+            padding: 60px 0 40px;
+            margin-top: 100px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .footer-column a:hover {
+            border-bottom-color: #000;
+        }
+        
+        .footer-bottom {
+            border-top: 2px solid #000;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 14px;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .sidebar-cta {
+                display: none;
+            }
+            
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 80px 1fr;
+            }
+            
+            .timeline-image {
+                grid-column: 2;
+                height: 150px;
+            }
+            
+            .timeline-text {
+                grid-column: 2;
+            }
+            
+            .plan-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .access-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .special-plans {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                display: none;
+            }
+            
+            .hero {
+                height: 500px;
+                margin-top: 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .sidebar-cta {
+                display: none;
+            }
+            
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-time {
+                width: 100px;
+            }
+            
+            .timeline-image {
+                grid-column: 1;
+            }
+            
+            .timeline-text {
+                grid-column: 1;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .season-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-tabs {
+                flex-direction: column;
+            }
+            
+            .media-logos {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">三国湊 MIKUNI MINATO</div>
+                <nav>
+                    <ul>
+                        <li><a href="#story">物語</a></li>
+                        <li><a href="#course">観光コース</a></li>
+                        <li><a href="#accommodation">宿泊</a></li>
+                        <li><a href="#experience">体験</a></li>
+                        <li><a href="#access">アクセス</a></li>
+                        <li><a href="#booking">予約</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ① ファーストビュー -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>春、福井・三国湊へ。<br>食と歴史と自然を、すべて味わう旅。</h1>
+            <p>日本海の豊かな食文化、北前船が運んだ歴史、<br>東尋坊の絶景。季節を感じる、上質な滞在体験。</p>
+            <div class="cta-button">宿泊プランを見る</div>
+        </div>
+    </section>
+
+    <!-- サイドバー固定CTA -->
+    <div class="sidebar-cta">
+        <h3>ご予約</h3>
+        <div class="sidebar-cta-button primary">宿泊予約はこちら</div>
+        <div class="sidebar-cta-button">お問い合わせ</div>
+        <div class="sidebar-sns">
+            <div class="sns-icon">[Instagram]</div>
+            <div class="sns-icon">[Facebook]</div>
+            <div class="sns-icon">[LINE]</div>
+        </div>
+    </div>
+
+    <!-- フローティングCTA -->
+    <div class="floating-cta">
+        今すぐ予約
+    </div>
+
+    <!-- ② 導入ストーリー -->
+    <section id="story">
+        <div class="container">
+            <p class="section-theme">STORY − 三国湊の魅力</p>
+            <h2 class="section-title">春色に染まる、三国湊の物語</h2>
+            <p class="section-subtitle">歴史が息づく港町で、季節を五感で感じる旅</p>
+            
+            <div class="story-section">
+                <div class="story-image">[春の三国湊の風景写真]</div>
+                <div class="story-text">
+                    <h3>北前船が運んだ、文化の香り</h3>
+                    <p>江戸時代、北前船交易で栄えた三国湊。京都や大阪から運ばれた文化が、この地に独特の風情を残しました。</p>
+                    <p>格子戸の町家が並ぶ路地、海風が運ぶ潮の香り、そして春になると桜が彩る静かな港町。ここには、時間がゆっくりと流れています。</p>
+                    <p>婦人画報が選んだ、大人の女性に相応しい上質な滞在。季節の移ろいを感じながら、心を満たす旅をご提案します。</p>
+                </div>
+            </div>
+            
+            <div class="story-section" style="margin-top: 40px;">
+                <div class="story-text">
+                    <h3>春だけの、特別な出会い</h3>
+                    <p>桜が咲き誇る丸岡城、新緑に包まれる雄島、そして日本海の春の味覚。三国湊の春は、一年で最も美しい季節です。</p>
+                    <p>オーベルジュで味わう地元食材の創作料理、町家で過ごす静寂の時間。この季節だけの特別な体験が、あなたを待っています。</p>
+                </div>
+                <div class="story-image">[桜や春の食材の写真]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 婦人画報特集：瀧谷寺・近藤古美術 -->
+    <section id="fujingaho-special">
+        <div class="container">
+            <p class="section-theme">FUJINGAHO SPECIAL − 婦人画報特集</p>
+            <h2 class="section-title">婦人画報が選んだ、三国湊の至宝</h2>
+            <p class="section-subtitle">歴史と美が息づく、特別な2つのスポット</p>
+            
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="media-banner" style="display: inline-block; max-width: 600px;">
+                    <div class="media-banner-image">[婦人画報ロゴ]</div>
+                    <p>婦人画報 2024年12月号「春の福井特集」にて詳しくご紹介</p>
+                </div>
+            </div>
+            
+            <!-- 瀧谷寺 -->
+            <div style="border: 3px solid #000; margin-bottom: 60px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                    <div style="border-right: 2px solid #000; height: 500px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center;">
+                        [瀧谷寺の写真]
+                    </div>
+                    <div style="padding: 60px 40px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 32px; margin-bottom: 20px; border-bottom: 3px solid #000; padding-bottom: 15px;">
+                            瀧谷寺（たきだんじ）
+                        </h3>
+                        <p style="font-size: 16px; line-height: 2; margin-bottom: 30px;">
+                            真言宗の古刹として、1300年以上の歴史を誇る瀧谷寺。国宝級の仏像や、見事な庭園が訪れる人を魅了します。
+                            四季折々の表情を見せる境内は、春には桜、秋には紅葉と、季節の美しさを堪能できます。
+                        </p>
+                        <p style="font-size: 16px; line-height: 2; margin-bottom: 30px;">
+                            婦人画報では、瀧谷寺の歴史的価値、建築美、そして心静まる空間について詳しくご紹介しています。
+                            三国湊を訪れたら必ず立ち寄りたい、格式高い寺院です。
+                        </p>
+                        <div style="display: flex; gap: 20px;">
+                            <div class="btn-outline" style="flex: 1; padding: 15px; text-align: center;">瀧谷寺について詳しく</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 近藤古美術 -->
+            <div style="border: 3px solid #000;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                    <div style="padding: 60px 40px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 32px; margin-bottom: 20px; border-bottom: 3px solid #000; padding-bottom: 15px;">
+                            近藤古美術
+                        </h3>
+                        <p style="font-size: 16px; line-height: 2; margin-bottom: 30px;">
+                            北前船交易で栄えた三国湊の歴史を物語る、貴重な古美術品の数々を扱う近藤古美術。
+                            江戸時代から伝わる工芸品、陶磁器、書画など、目利きが選んだ逸品が並びます。
+                        </p>
+                        <p style="font-size: 16px; line-height: 2; margin-bottom: 30px;">
+                            婦人画報では、店主のこだわりや、三国湊の歴史と古美術の関係について深く掘り下げています。
+                            美術品を通じて、港町の文化の豊かさを感じられる特別な空間です。
+                        </p>
+                        <div style="display: flex; gap: 20px;">
+                            <div class="btn-outline" style="flex: 1; padding: 15px; text-align: center;">近藤古美術について詳しく</div>
+                        </div>
+                    </div>
+                    <div style="border-left: 2px solid #000; height: 500px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center;">
+                        [近藤古美術の写真]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ 観光モデルコース -->
+    <section id="course">
+        <div class="container">
+            <p class="section-theme">COURSE − 体験する</p>
+            <h2 class="section-title">春の三国湊 観光モデルコース</h2>
+            <p class="section-subtitle">自然を巡り、歴史を辿り、食を味わう。あなたのペースで楽しむ上質な旅程</p>
+            
+            <div class="course-tabs">
+                <div class="course-tab active">1泊2日コース</div>
+                <div class="course-tab">2泊3日コース</div>
+            </div>
+            
+            <div class="course-content">
+                <h3 style="font-size: 24px; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                    春の三国湊 1泊2日 スタンダードコース
+                </h3>
+                <p style="margin-bottom: 30px;">
+                    日本海の絶景、歴史ある港町の風情、そして春の味覚を満喫する定番コース。<br>
+                    初めての方にもおすすめの、三国湊の魅力を凝縮した旅程です。
+                </p>
+                
+                <div class="course-map">[観光マップ・ルート図]</div>
+                
+                <div class="course-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">1日目<br>12:00</div>
+                        <div class="timeline-image">[東尋坊の写真]</div>
+                        <div class="timeline-text">
+                            <h4>東尋坊（国の天然記念物）</h4>
+                            <p>断崖絶壁が続く日本海の絶景。柱状節理の岩肌は世界でも珍しい地質です。遊覧船からの眺めもおすすめ。春の澄んだ空気の中、海の青さが一層際立ちます。</p>
+                            <p>所要時間：約1時間30分</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:00</div>
+                        <div class="timeline-image">[雄島の写真]</div>
+                        <div class="timeline-text">
+                            <h4>雄島（神の島）</h4>
+                            <p>赤い朱塗りの橋を渡って訪れる神秘の島。島全体が大湊神社の境内で、パワースポットとしても知られています。春の新緑に包まれた参道は格別の美しさ。</p>
+                            <p>所要時間：約1時間</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:30</div>
+                        <div class="timeline-image">[三国湊町並み写真]</div>
+                        <div class="timeline-text">
+                            <h4>三国湊きたまえ通り散策</h4>
+                            <p>北前船で栄えた当時の面影を残す町家が並ぶ通り。格子戸や石畳が美しい路地を散策。老舗の和菓子店や工芸品店でお買い物も楽しめます。</p>
+                            <p>所要時間：約1時間30分</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:00</div>
+                        <div class="timeline-image">[宿泊施設の写真]</div>
+                        <div class="timeline-text">
+                            <h4>チェックイン（オーベルジュ or 町家宿）</h4>
+                            <p>日本海を望むオーベルジュ、または歴史ある町家を改装した宿へ。夕食は地元食材をふんだんに使った創作料理を。春の旬の食材、甘海老、ホタルイカなどをお楽しみください。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">2日目<br>08:00</div>
+                        <div class="timeline-image">[朝市の写真]</div>
+                        <div class="timeline-text">
+                            <h4>三国港 朝市見学</h4>
+                            <p>早朝の港で開かれる朝市を見学。地元の漁師が水揚げしたばかりの魚介類が並びます。活気ある市場の雰囲気を体感してください。</p>
+                            <p>所要時間：約1時間</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">10:00</div>
+                        <div class="timeline-image">[丸岡城の写真]</div>
+                        <div class="timeline-text">
+                            <h4>丸岡城（日本最古の現存天守）</h4>
+                            <p>春は桜の名所としても有名。現存する最古の天守閣の一つで、国の重要文化財。桜と天守閣のコントラストは必見です。</p>
+                            <p>所要時間：約1時間30分</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div class="timeline-image">[越前そばの写真]</div>
+                        <div class="timeline-text">
+                            <h4>昼食（越前そば）</h4>
+                            <p>福井名物の越前おろしそばで締めくくり。厳選されたそば粉と清らかな水で打たれた蕎麦は絶品です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ 宿泊施設紹介 → オーベルジュホマチ プラン紹介 -->
+    <section id="accommodation">
+        <div class="container">
+            <p class="section-theme">STAY − 滞在する</p>
+            <h2 class="section-title">オーベルジュホマチで過ごす、特別な時間</h2>
+            <p class="section-subtitle">日本海を望む高台に佇むオーベルジュで、食と景色を堪能する上質な滞在</p>
+            
+            <div class="accommodation-intro">
+                <h3>Auberge HOMACHI − 三国湊の食文化と自然を味わう宿</h3>
+                <p>
+                    オーベルジュホマチは、日本海を一望できる高台に位置するオーベルジュです。<br>
+                    地元三国港で水揚げされた新鮮な魚介類、福井県産の旬の食材を使った創作料理と、<br>
+                    東尋坊・雄島を望む絶景、そして心からくつろげる上質な空間で、特別な滞在体験をご提供します。
+                </p>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div class="cta-button">オーベルジュホマチについて詳しく見る</div>
+                </div>
+            </div>
+            
+            <h3 style="font-size: 28px; margin: 60px 0 40px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                宿泊プラン
+            </h3>
+            
+            <div class="plan-grid">
+                <div class="plan-card">
+                    <div class="plan-image">[海を望むスイートルーム写真]</div>
+                    <div class="plan-content">
+                        <h3>オーシャンビュー スイートプラン</h3>
+                        <div class="plan-tags">
+                            <span class="tag">最上級</span>
+                            <span class="tag">オーシャンビュー</span>
+                            <span class="tag">露天風呂付き</span>
+                        </div>
+                        <p class="plan-description">
+                            日本海を180度見渡せる最上階スイートルーム。客室専用露天風呂から東尋坊の絶景を独り占め。特選創作フレンチコースと地酒テイスティング付き。
+                        </p>
+                        <div class="plan-features">
+                            <ul>
+                                <li>スイートルーム（60㎡）</li>
+                                <li>客室専用露天風呂</li>
+                                <li>特選創作フレンチコース</li>
+                                <li>地酒テイスティング</li>
+                                <li>レイトチェックアウト</li>
+                                <li>ウェルカムドリンク</li>
+                            </ul>
+                        </div>
+                        <div style="border-top: 1px solid #000; padding-top: 15px; margin-bottom: 20px;">
+                            <p style="font-size: 14px; margin-bottom: 5px;">1泊2食付き</p>
+                            <p style="font-size: 24px; font-weight: bold;">¥45,000〜 / 1名</p>
+                        </div>
+                        <div class="plan-cta">
+                            <div class="btn-outline" style="flex: 1;">詳細を見る</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-image">[スタンダードルーム写真]</div>
+                    <div class="plan-content">
+                        <h3>スタンダードプラン</h3>
+                        <div class="plan-tags">
+                            <span class="tag">人気</span>
+                            <span class="tag">オーシャンビュー</span>
+                            <span class="tag">創作料理</span>
+                        </div>
+                        <p class="plan-description">
+                            日本海を望む明るい客室で、季節の創作料理を楽しむベーシックプラン。三国港直送の魚介類と福井県産食材をふんだんに使用した料理が自慢。
+                        </p>
+                        <div class="plan-features">
+                            <ul>
+                                <li>スタンダードルーム（35㎡）</li>
+                                <li>オーシャンビュー</li>
+                                <li>季節の創作料理コース</li>
+                                <li>温泉大浴場利用</li>
+                                <li>朝食付き</li>
+                                <li>無料Wi-Fi</li>
+                            </ul>
+                        </div>
+                        <div style="border-top: 1px solid #000; padding-top: 15px; margin-bottom: 20px;">
+                            <p style="font-size: 14px; margin-bottom: 5px;">1泊2食付き</p>
+                            <p style="font-size: 24px; font-weight: bold;">¥28,000〜 / 1名</p>
+                        </div>
+                        <div class="plan-cta">
+                            <div class="btn-outline" style="flex: 1;">詳細を見る</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-image">[連泊プラン写真]</div>
+                    <div class="plan-content">
+                        <h3>2泊3日 ゆったり満喫プラン</h3>
+                        <div class="plan-tags">
+                            <span class="tag">連泊</span>
+                            <span class="tag">特典付き</span>
+                            <span class="tag">観光サポート</span>
+                        </div>
+                        <p class="plan-description">
+                            三国湊をじっくり楽しむ連泊プラン。観光タクシー半日プラン、工芸体験チケット、送迎サービス付き。2泊目は特別メニューをご用意。
+                        </p>
+                        <div class="plan-features">
+                            <ul>
+                                <li>お部屋タイプ選択可</li>
+                                <li>2泊5食（3日目昼食付）</li>
+                                <li>観光タクシー半日プラン</li>
+                                <li>工芸体験チケット</li>
+                                <li>送迎サービス</li>
+                                <li>福井特産品お土産</li>
+                            </ul>
+                        </div>
+                        <div style="border-top: 1px solid #000; padding-top: 15px; margin-bottom: 20px;">
+                            <p style="font-size: 14px; margin-bottom: 5px;">2泊5食付き</p>
+                            <p style="font-size: 24px; font-weight: bold;">¥60,000〜 / 1名</p>
+                        </div>
+                        <div class="plan-cta">
+                            <div class="btn-outline" style="flex: 1;">詳細を見る</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <div class="cta-button">すべてのプランを見る</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ 周辺体験・観光紹介 -->
+    <section id="experience">
+        <div class="container">
+            <p class="section-theme">EXPERIENCE − 探索する</p>
+            <h2 class="section-title">三国湊で味わう、多彩な体験</h2>
+            <p class="section-subtitle">自然の絶景、歴史の町並み、食文化との出会い。滞在を彩る特別なひととき</p>
+            
+            <div class="experience-categories">
+                <div class="experience-category">すべて</div>
+                <div class="experience-category">自然・景観</div>
+                <div class="experience-category">歴史・文化</div>
+                <div class="experience-category">食・市場</div>
+                <div class="experience-category">体験・アクティビティ</div>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-image">[東尋坊写真]</div>
+                    <div class="experience-content">
+                        <h4>東尋坊</h4>
+                        <p>国の天然記念物に指定された断崖絶壁。世界三大奇勝の一つとして知られ、柱状節理の迫力ある景観が楽しめます。遊覧船での海上からの眺めも絶景。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[雄島写真]</div>
+                    <div class="experience-content">
+                        <h4>雄島（神の島）</h4>
+                        <p>赤い朱塗りの橋を渡って訪れる神秘の島。島全体が大湊神社の境内で、原生林に囲まれた参道は神聖な雰囲気。パワースポットとしても人気。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[越前松島水族館写真]</div>
+                    <div class="experience-content">
+                        <h4>越前松島水族館</h4>
+                        <p>日本海の魚を中心に展示する体験型水族館。イルカショーやペンギンの散歩、魚との触れ合いコーナーなど、ファミリーにも人気のスポット。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[きたまえ通り写真]</div>
+                    <div class="experience-content">
+                        <h4>三国湊きたまえ通り</h4>
+                        <p>北前船交易で栄えた当時の面影を残す町並み。格子戸の町家が並ぶ路地を散策しながら、老舗の和菓子店や工芸品店でのお買い物が楽しめます。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[三国湊町家館写真]</div>
+                    <div class="experience-content">
+                        <h4>三国湊町家館</h4>
+                        <p>江戸時代の豪商の邸宅を公開。当時の生活様式や建築様式を見学できます。坪庭や蔵なども見どころ。北前船の歴史を学べる資料も展示。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[北前船資料館写真]</div>
+                    <div class="experience-content">
+                        <h4>北前船資料館</h4>
+                        <p>三国湊の繁栄を支えた北前船の歴史を紹介。船の模型や航路図、交易品など貴重な資料を展示。当時の港町の賑わいを感じられます。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[三国港市場写真]</div>
+                    <div class="experience-content">
+                        <h4>三国港市場・朝市</h4>
+                        <p>早朝の港で開かれる活気ある朝市。地元漁師が水揚げした新鮮な魚介類が並びます。地元の方との交流も楽しみの一つ。季節の味覚を堪能。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[漁港見学写真]</div>
+                    <div class="experience-content">
+                        <h4>漁港見学・競り体験</h4>
+                        <p>三国港での早朝の競りを見学できる特別体験。漁師の方の解説付きで、魚の目利きや競りの仕組みを学べます。※要事前予約</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">[工芸体験写真]</div>
+                    <div class="experience-content">
+                        <h4>伝統工芸体験</h4>
+                        <p>越前焼の陶芸体験や、越前和紙を使った紙漉き体験など。職人の指導のもと、自分だけのオリジナル作品を作れます。旅の思い出にぴったり。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 嶺北の食と暮らしを体験 -->
+            <div style="margin-top: 80px; border-top: 3px solid #000; padding-top: 60px;">
+                <h3 style="font-size: 32px; margin-bottom: 40px; text-align: center; border-bottom: 3px solid #000; padding-bottom: 20px;">
+                    嶺北の食文化と暮らしを体験する
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
+                    <!-- 谷口屋の油揚げ -->
+                    <div style="border: 3px solid #000;">
+                        <div style="border-bottom: 2px solid #000; height: 300px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center;">
+                            [谷口屋 油揚げの写真]
+                        </div>
+                        <div style="padding: 40px;">
+                            <h4 style="font-size: 24px; margin-bottom: 15px; border-left: 4px solid #000; padding-left: 15px;">
+                                谷口屋の油揚げ
+                            </h4>
+                            <p style="font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
+                                創業100年以上の歴史を誇る谷口屋の名物「竹田の油揚げ」。外はカリッと、中はふわふわの食感が特徴で、
+                                一枚一枚丁寧に手作りされています。出来たての油揚げを店内でいただくこともでき、
+                                福井の食文化を代表する逸品として多くの人に愛されています。
+                            </p>
+                            <div class="btn-outline" style="text-align: center; padding: 12px;">谷口屋について詳しく</div>
+                        </div>
+                    </div>
+                    
+                    <!-- くらしつむぐあとりえ -->
+                    <div style="border: 3px solid #000;">
+                        <div style="border-bottom: 2px solid #000; height: 300px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center;">
+                            [くらしつむぐあとりえの写真]
+                        </div>
+                        <div style="padding: 40px;">
+                            <h4 style="font-size: 24px; margin-bottom: 15px; border-left: 4px solid #000; padding-left: 15px;">
+                                くらしつむぐあとりえ
+                            </h4>
+                            <p style="font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
+                                福井の伝統工芸と現代の暮らしを繋ぐ、体験型アトリエ。越前和紙を使った小物作りや、
+                                地元の素材を活かしたクラフト体験ができます。作家の方から直接指導を受けながら、
+                                自分だけのオリジナル作品を制作。福井の工芸文化に触れる、貴重な体験です。
+                            </p>
+                            <div class="btn-outline" style="text-align: center; padding: 12px;">体験プログラムを見る</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <div class="cta-button">体験付きプランを見る</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ 季節特集（春） -->
+    <section id="season">
+        <div class="container">
+            <p class="section-theme">SEASON − 春を感じる</p>
+            <h2 class="section-title">春の三国湊 − 季節の見どころ</h2>
+            <p class="section-subtitle">桜、新緑、春の味覚。この季節だけの特別な魅力</p>
+            
+            <div class="season-hero">[春の三国湊大型ビジュアル：桜と海の風景]</div>
+            
+            <div class="season-content">
+                <div class="season-card">
+                    <div class="season-icon">[桜アイコン]</div>
+                    <h4>春爛漫の桜めぐり</h4>
+                    <p>丸岡城の天守閣を彩る約400本のソメイヨシノは圧巻。足羽川沿いの桜並木、三国神社の境内など、市内各所で桜を楽しめます。見頃は3月下旬〜4月上旬。</p>
+                </div>
+                
+                <div class="season-card">
+                    <div class="season-icon">[新緑アイコン]</div>
+                    <h4>新緑に包まれる雄島</h4>
+                    <p>春の雄島は新緑が美しく、森林浴に最適。原生林の中を歩く参道は、マイナスイオンたっぷり。野鳥のさえずりを聞きながら、心身をリフレッシュ。</p>
+                </div>
+                
+                <div class="season-card">
+                    <div class="season-icon">[食材アイコン]</div>
+                    <h4>春の味覚を堪能</h4>
+                    <p>甘海老、ホタルイカ、サヨリなど春の魚介が豊富。山菜や筍も旬を迎えます。越前がれいの刺身や、新玉ねぎを使った料理など、春ならではの味わいを。</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; border: 2px solid #000; padding: 40px;">
+                <h3 style="font-size: 24px; margin-bottom: 30px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                    春のイベント・行事
+                </h3>
+                <div style="display: grid; gap: 20px;">
+                    <div style="border-bottom: 1px solid #000; padding-bottom: 20px;">
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">三国祭（5月19日〜21日）</h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            北陸三大祭りの一つ。巨大な武者人形を乗せた山車が町を練り歩く勇壮な祭り。250年以上の歴史を持つ伝統行事で、この時期は特に賑わいます。
+                        </p>
+                    </div>
+                    <div style="border-bottom: 1px solid #000; padding-bottom: 20px;">
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">丸岡城桜まつり（4月上旬）</h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            日本さくら名所100選に選ばれた丸岡城で開催。ライトアップされた夜桜と天守閣の共演は幻想的。期間中は様々なイベントも開催されます。
+                        </p>
+                    </div>
+                    <div style="padding-bottom: 20px;">
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">春の朝市（4月〜5月）</h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            三国港で毎週末開催される朝市。春の魚介類や山菜、地元の農産物が並びます。新鮮な食材を求めて地元の方も多く訪れる人気スポット。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 嶺南地区バナー -->
+            <div style="margin-top: 80px; border: 3px solid #000; padding: 50px 40px; text-align: center; background: #f9f9f9;">
+                <h3 style="font-size: 28px; margin-bottom: 20px;">福井県嶺南地区もお楽しみいただけます</h3>
+                <p style="font-size: 16px; line-height: 1.8; margin-bottom: 30px;">
+                    若狭湾の美しい海岸線、小浜の歴史的な街並み、美浜・高浜の美しいビーチ。<br>
+                    嶺南地区では、また違った福井の魅力を発見できます。
+                </p>
+                <div style="border: 2px solid #000; height: 200px; margin-bottom: 30px; background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 10px, #e0e0e0 10px, #e0e0e0 20px); display: flex; align-items: center; justify-content: center;">
+                    [嶺南地区イメージ写真]
+                </div>
+                <div class="btn-outline" style="display: inline-block; padding: 15px 40px;">嶺南地区の特集を見る</div>
+                <p style="font-size: 12px; margin-top: 15px; color: #666;">※婦人画報 同号掲載</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑦ アクセス案内 -->
+    <section id="access">
+        <div class="container">
+            <p class="section-theme">ACCESS − アクセス</p>
+            <h2 class="section-title">アクセス・交通案内</h2>
+            <p class="section-subtitle">東京・大阪・名古屋から、三国湊へのアクセス方法</p>
+            
+            <div class="access-grid">
+                <div class="access-method">
+                    <h3>■ 電車でお越しの方</h3>
+                    
+                    <div class="access-route">
+                        <h4>東京方面から</h4>
+                        <ul class="access-steps">
+                            <li>東京駅 → JR北陸新幹線「かがやき」→ 金沢駅（約2時間30分）</li>
+                            <li>金沢駅 → JR特急サンダーバード → 芦原温泉駅（約45分）</li>
+                            <li>芦原温泉駅 → えちぜん鉄道 → 三国駅（約20分）</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 14px; padding-left: 20px;">
+                            所要時間：約3時間40分 / 料金：約15,000円
+                        </p>
+                    </div>
+                    
+                    <div class="access-route">
+                        <h4>大阪・名古屋方面から</h4>
+                        <ul class="access-steps">
+                            <li>大阪駅・名古屋駅 → JR特急サンダーバード → 芦原温泉駅</li>
+                            <li>芦原温泉駅 → えちぜん鉄道 → 三国駅（約20分）</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 14px; padding-left: 20px;">
+                            大阪から：約3時間 / 約9,000円<br>
+                            名古屋から：約2時間30分 / 約7,500円
+                        </p>
+                    </div>
+                    
+                    <div style="border: 2px solid #000; padding: 20px; margin-top: 20px; background: #f9f9f9;">
+                        <p style="font-weight: bold; margin-bottom: 10px;">■ 送迎サービスのご案内</p>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            芦原温泉駅から宿泊施設までの送迎サービスを実施している施設もございます。<br>
+                            ご予約時にお問い合わせください。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="access-method">
+                    <h3>■ お車でお越しの方</h3>
+                    
+                    <div class="access-route">
+                        <h4>東京方面から</h4>
+                        <ul class="access-steps">
+                            <li>東京IC → 関越自動車道・北陸自動車道</li>
+                            <li>金津IC → 約15分で三国湊エリア</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 14px; padding-left: 20px;">
+                            所要時間：約6時間 / 高速料金：約10,000円
+                        </p>
+                    </div>
+                    
+                    <div class="access-route">
+                        <h4>大阪方面から</h4>
+                        <ul class="access-steps">
+                            <li>吹田IC → 名神高速・北陸自動車道</li>
+                            <li>金津IC → 約15分で三国湊エリア</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 14px; padding-left: 20px;">
+                            所要時間：約3時間 / 高速料金:約6,000円
+                        </p>
+                    </div>
+                    
+                    <div class="access-route">
+                        <h4>名古屋方面から</h4>
+                        <ul class="access-steps">
+                            <li>名古屋IC → 東海北陸自動車道・北陸自動車道</li>
+                            <li>金津IC → 約15分で三国湊エリア</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-size: 14px; padding-left: 20px;">
+                            所要時間：約2時間30分 / 高速料金：約5,000円
+                        </p>
+                    </div>
+                    
+                    <div style="border: 2px solid #000; padding: 20px; margin-top: 20px; background: #f9f9f9;">
+                        <p style="font-weight: bold; margin-bottom: 10px;">■ 駐車場のご案内</p>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            各宿泊施設に駐車場を完備。東尋坊や主要観光スポットにも駐車場がございます。<br>
+                            ※混雑時期は事前予約をおすすめします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="access-map">[三国湊エリア アクセスマップ]</div>
+            
+            <div style="border: 2px solid #000; padding: 40px; margin-top: 40px;">
+                <h3 style="font-size: 24px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                    現地での移動について
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 30px;">
+                    <div style="text-align: center;">
+                        <div style="border: 2px solid #000; width: 80px; height: 80px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                            [レンタカーアイコン]
+                        </div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">レンタカー</h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            芦原温泉駅周辺に複数のレンタカー会社あり。自由に観光地を巡りたい方におすすめ。
+                        </p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="border: 2px solid #000; width: 80px; height: 80px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                            [観光バスアイコン]
+                        </div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">観光周遊バス</h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            主要観光スポットを巡る周遊バスを運行。1日乗車券でお得に観光できます。
+                        </p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="border: 2px solid #000; width: 80px; height: 80px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                            [タクシーアイコン]
+                        </div>
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">タクシー</h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            観光タクシープランあり。地元を熟知したドライバーが案内する貸切プランも人気。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑧ お客様の声／掲載実績 -->
+    <section id="reviews">
+        <div class="container">
+            <p class="section-theme">REVIEWS − お客様の声</p>
+            <h2 class="section-title">お客様の声</h2>
+            <p class="section-subtitle">オーベルジュホマチを訪れた皆様からの感想</p>
+            
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">[アバター画像]</div>
+                        <div class="review-info">
+                            <h4>M.K様（58歳・女性）</h4>
+                            <p>東京都 / 2024年4月訪問</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★★ 5.0</div>
+                    <p class="review-text">
+                        婦人画報で見て興味を持ち訪れました。オーベルジュでの食事が素晴らしく、地元食材の美味しさに感動。東尋坊の絶景も期待以上でした。春の桜が美しく、また違う季節にも訪れたいです。
+                    </p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">[アバター画像]</div>
+                        <div class="review-info">
+                            <h4>S.T様（62歳・女性）</h4>
+                            <p>大阪府 / 2024年3月訪問</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★★ 5.0</div>
+                    <p class="review-text">
+                        町家の宿に宿泊しました。格子戸や坪庭が風情があり、まるで江戸時代にタイムスリップしたよう。朝市で地元の方と交流できたのも良い思い出です。静かで落ち着いた大人の旅ができました。
+                    </p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">[アバター画像]</div>
+                        <div class="review-info">
+                            <h4>H.Y様（55歳・女性）</h4>
+                            <p>愛知県 / 2024年4月訪問</p>
+                        </div>
+                    </div>
+                    <div class="review-rating">★★★★☆ 4.5</div>
+                    <p class="review-text">
+                        友人と2泊3日で訪れました。東尋坊の遊覧船、雄島の散策、丸岡城の桜と見どころがたくさん。越前ガニの時期ではなかったですが、春の魚介類も十分美味しかったです。次は冬に来たいです。
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 婦人画報掲載バナー（小） -->
+            <div class="media-banner">
+                <div class="media-banner-image">[婦人画報ロゴ・掲載イメージ]</div>
+                <p>婦人画報 2024年12月号「春の福井特集」掲載</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑨ 料金・特典・予約導線 -->
+    <section id="booking">
+        <div class="container">
+            <p class="section-theme">BOOKING − ご予約</p>
+            <h2 class="section-title">特別プラン・ご予約</h2>
+            <p class="section-subtitle">このランディングページ限定の特別キャンペーン</p>
+            
+            <div class="special-plan-section">
+                <h3>春の三国湊満喫 − LP限定スペシャルプラン</h3>
+                <p style="text-align: center; font-size: 16px; line-height: 1.8; margin-bottom: 40px;">
+                    このページをご覧いただいた方だけの特別プランをご用意しました。<br>
+                    春の三国湊を存分にお楽しみいただける、充実の内容です。
+                </p>
+                
+                <div class="special-plans">
+                    <div class="special-plan-card">
+                        <h4>春の食文化体験プラン</h4>
+                        <div class="special-plan-content">
+                            <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+                                三国港の朝市見学から始まる、食文化を深く味わうプラン。地元漁師との交流、旬の魚介を使った特別料理、
+                                地酒テイスティングまで、福井の食を堪能できる2日間。
+                            </p>
+                        </div>
+                        <div class="special-plan-price">
+                            ¥38,000〜 / 1名<br>
+                            <span style="font-size: 16px; font-weight: normal;">1泊2食 + 特別体験付き</span>
+                        </div>
+                        <ul class="special-plan-features">
+                            <li>オーシャンビュー客室確約</li>
+                            <li>三国港朝市ガイド付き見学</li>
+                            <li>特選食材を使った創作料理コース</li>
+                            <li>福井地酒テイスティング</li>
+                            <li>漁師との交流会（季節により変動）</li>
+                            <li>越前ガニ等、旬の食材お土産付き</li>
+                            <li>送迎サービス（芦原温泉駅）</li>
+                        </ul>
+                        <div style="text-align: center;">
+                            <div class="cta-button">このプランを予約</div>
+                        </div>
+                    </div>
+                    
+                    <div class="special-plan-card">
+                        <h4>春の歴史探訪 × 絶景プラン</h4>
+                        <div class="special-plan-content">
+                            <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+                                東尋坊・雄島の絶景と、北前船が栄えた歴史ある町並みを巡る2泊3日プラン。
+                                観光ガイド付きで、三国湊の歴史と自然を深く知る旅。
+                            </p>
+                        </div>
+                        <div class="special-plan-price">
+                            ¥65,000〜 / 1名<br>
+                            <span style="font-size: 16px; font-weight: normal;">2泊5食 + 観光ガイド付き</span>
+                        </div>
+                        <ul class="special-plan-features">
+                            <li>スイートルームまたは露天風呂付き客室</li>
+                            <li>専属ガイドによる歴史探訪ツアー</li>
+                            <li>東尋坊遊覧船プライベートチャーター</li>
+                            <li>雄島パワースポット巡り</li>
+                            <li>北前船資料館・町家館入館券</li>
+                            <li>伝統工芸体験（越前焼 or 越前和紙）</li>
+                            <li>観光タクシー1日プラン</li>
+                            <li>レイトチェックアウト（12:00）</li>
+                        </ul>
+                        <div style="text-align: center;">
+                            <div class="cta-button">このプランを予約</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="border: 2px solid #000; padding: 40px; margin: 60px 0; background: #f9f9f9;">
+                <h3 style="font-size: 24px; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px;">
+                    早期予約特典
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 30px;">
+                    <div style="border: 2px solid #000; padding: 30px; background: #fff;">
+                        <h4 style="font-size: 20px; margin-bottom: 15px; border-left: 4px solid #000; padding-left: 10px;">
+                            早割30：30日前予約で10%OFF
+                        </h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            ご宿泊日の30日前までにご予約で全プラン10%OFF。春の人気シーズンはお早めのご予約をおすすめします。
+                        </p>
+                    </div>
+                    <div style="border: 2px solid #000; padding: 30px; background: #fff;">
+                        <h4 style="font-size: 20px; margin-bottom: 15px; border-left: 4px solid #000; padding-left: 10px;">
+                            リピーター特典：次回利用券プレゼント
+                        </h4>
+                        <p style="font-size: 14px; line-height: 1.8;">
+                            ご宿泊いただいた方に、次回ご利用いただける5,000円分のクーポンをプレゼント。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-button-section">
+                <h3>ご予約はこちら</h3>
+                <p>
+                    オンライン予約システム「トリプラ」にて、24時間ご予約を承っております。<br>
+                    プラン詳細の確認、空室状況の確認、ご予約まで、すべてオンラインで完結します。
+                </p>
+                <div class="booking-button-large">オンライン予約（トリプラ）</div>
+                <p style="font-size: 14px; margin-top: 20px;">
+                    ※外部予約サイトへ移動します
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; padding: 40px; border: 2px solid #000;">
+                <h3 style="font-size: 24px; margin-bottom: 20px;">お電話でのご予約・お問い合わせ</h3>
+                <p style="font-size: 32px; font-weight: bold; margin-bottom: 10px;">0120-XXX-XXX</p>
+                <p style="font-size: 14px; margin-bottom: 20px;">受付時間：9:00〜18:00（年中無休）</p>
+                <p style="font-size: 14px; line-height: 1.8;">
+                    「ランディングページを見た」とお伝えいただくと、特別プランのご案内がスムーズです。<br>
+                    経験豊富なコンシェルジュが、お客様のご要望に合わせた旅程をご提案いたします。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>観光情報</h4>
+                    <ul>
+                        <li><a href="#">観光スポット一覧</a></li>
+                        <li><a href="#">モデルコース</a></li>
+                        <li><a href="#">体験プログラム</a></li>
+                        <li><a href="#">季節のイベント</a></li>
+                        <li><a href="#">アクセスマップ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>宿泊施設</h4>
+                    <ul>
+                        <li><a href="#">オーベルジュ一覧</a></li>
+                        <li><a href="#">町家宿一覧</a></li>
+                        <li><a href="#">ホテル・旅館</a></li>
+                        <li><a href="#">料金・プラン</a></li>
+                        <li><a href="#">予約方法</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>お役立ち情報</h4>
+                    <ul>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">交通アクセス</a></li>
+                        <li><a href="#">観光パンフレット</a></li>
+                        <li><a href="#">お土産情報</a></li>
+                        <li><a href="#">天気・服装</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>お問い合わせ</h4>
+                    <ul>
+                        <li><a href="#">予約・問い合わせ</a></li>
+                        <li><a href="#">団体予約</a></li>
+                        <li><a href="#">メディア関係者様</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">運営会社</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div style="margin-bottom: 20px;">
+                    <div style="border: 2px solid #000; display: inline-block; padding: 15px 30px; font-size: 18px; font-weight: bold;">
+                        三国湊 MIKUNI MINATO
+                    </div>
+                </div>
+                <p>© 2024 Auberge HOMACHI / Mikuni Minato Tourism. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
