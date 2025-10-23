@@ -993,6 +993,24 @@
     </style>
 </head>
 <body>
+    <script>
+        (function() {
+            // ページ全体を一時的に非表示
+            document.body.style.visibility = 'hidden';
+
+            // パスワードチェック
+            var password = prompt('パスワードを入力してください:');
+
+            if (password === 'mikuni2024') {
+                // 正しいパスワードの場合、ページを表示
+                document.body.style.visibility = 'visible';
+            } else {
+                // 間違ったパスワードの場合
+                document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;"><p>アクセスが拒否されました。</p></div>';
+                document.body.style.visibility = 'visible';
+            }
+        })();
+    </script>
     <!-- ヘッダー -->
     <header>
         <div class="container">
