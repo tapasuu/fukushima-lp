@@ -5,6 +5,14 @@
     {
       "source": "/",
       "destination": "/tmp/index.html"
+    },
+    {
+      "source": "/css/(.*)",
+      "destination": "/tmp/css/$1"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "/tmp/images/$1"
     }
   ],
   "headers": [
