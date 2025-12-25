@@ -1,0 +1,59 @@
+/* Sakura Petal Styles */
+.sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background-color: #ffb7c5; // Sakura Pink
+    border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%; // Basic petal shape
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+// Falling Animation with Fade-out
+@keyframes sakura-fall {
+    0% {
+        top: -5%; // Start slightly closer to top 0
+        transform: translateX(0) rotate(0deg) rotateX(0deg);
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        top: 105%;
+        transform: translateX(100px) rotate(360deg) rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+// Swaying Animation
+@keyframes sakura-sway {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+.petal {
+    animation-name: sakura-fall, sakura-sway;
+    animation-iteration-count: 1; // Play once as requested
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1), ease-in-out;
+    animation-fill-mode: forwards;
+}

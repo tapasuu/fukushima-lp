@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福島LP - 開発環境</title>
+  <script type="module" crossorigin src="/js/index.js"></script>
+  <link rel="stylesheet" crossorigin href="/css/index.css">
+</head>
+<body>
+    <h1>Vite + Sass 開発環境</h1>
+    <p>この環境で開発して、ビルドするとtmpディレクトリに出力されます。</p>
+
+</body>
+</html>

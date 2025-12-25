@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+// Responsive breakpoints
+@mixin sp {
+  @media screen and (max-width: $breakpoint-sp) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+// Flexbox center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Transition
+@mixin transition($properties: all, $duration: 0.3s, $easing: ease) {
+  transition: $properties $duration $easing;
+}
+
+// Box Shadow
+@mixin shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@mixin shadow-md {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
