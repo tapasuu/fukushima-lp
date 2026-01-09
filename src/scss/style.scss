@@ -17,6 +17,18 @@ html {
   box-sizing: border-box;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 body {
   font-family: $font-mincho;
   color: $color-text;
@@ -83,7 +95,6 @@ body {
   text-align: center;
 }
 
-// Apply styles to elements
 h2,
 .story-main-title,
 .hero-title,
@@ -95,6 +106,12 @@ h2,
 .reviews-main-title,
 .booking-main-title {
   @extend %h2-style;
+}
+
+section,
+.fujingaho-special-bg {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
 }
 
 h3,
@@ -334,7 +351,7 @@ p,
   width: 100%;
   position: relative;
   height: 750px;
-  background: url('../images/other/header_pc.jpg') no-repeat center center / cover;
+  background: url('../images/other/header-pc.jpg') no-repeat center center / cover;
 
   >picture {
     display: none;
@@ -3632,6 +3649,18 @@ p,
   font-size: 0.875rem;
   color: $color-text-light;
   letter-spacing: 0.02em;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: $color-text-light;
+  margin-top: 10px;
+
+  @include sp {
+    font-size: 0.625rem;
+    padding: 0 20px;
+  }
 }
 
 /* ========== Reveal Animations ========== */
